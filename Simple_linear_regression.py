@@ -24,8 +24,6 @@ mlp.rc('font', family='ChineseFont')
 
 # y = wx + b
 
-
-
 def plot_pred(w, b):
     y_pred = X * w + b
 

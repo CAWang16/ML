@@ -76,7 +76,7 @@ plt.plot(np.arange(0, 100), c_hist[:100])
 plt.title("Iteration vs Cost")
 plt.xlabel("Iteration")
 plt.ylabel("Cost")
-plt.show()
+# plt.show()
 
 # 最後回到問題上 y = w*x + b
 # print(f"年資3.5 預測薪資為 {w_final *3.5 + b_final:.1f}k")
