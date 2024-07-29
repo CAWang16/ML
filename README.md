@@ -24,7 +24,7 @@ This script performs simple linear regression using gradient descent. It reads a
 2. **compute_gradient**: Computes the gradient of the cost function with respect to the weights (`w`) and bias (`b`).
 3. **gradient_descent**: Iteratively updates the weights and bias to minimize the cost function using the computed gradients.
 
-### 3. Multiple_linear_regression.py
+### 3. Multiple_Linear_Regression.py
 
 This script demonstrates the implementation of multiple linear regression using gradient descent. It includes functions to compute cost, compute gradients, and perform gradient descent optimization on a dataset that includes categorical and numerical features.
 
