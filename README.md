@@ -65,7 +65,6 @@ This script provides a visual exploration of gradient descent for linear regress
    python classification_logistic_regression.py
    python gradient_descent.py
 
-
 # 從零實現機器學習算法
 
 本倉庫包含三個 Python 腳本，這些腳本從零實現了機器學習算法，不依賴於 `nn.Module`。這種方法允許更詳細地探索每個計算步驟，有助於深入理解梯度下降、損失函數和其他核心機器學習概念的工作原理。
