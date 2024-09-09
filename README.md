@@ -1,81 +1,167 @@
-# Machine Learning Practice Files
+# Machine Learning Algorithms from Scratch
 
-This repository contains practice files for Machine Learning, focusing on different algorithms and techniques. Below is a description of the available files and their functionalities.
+This repository contains three Python scripts that implement machine learning algorithms from scratch without relying on `nn.Module`. This approach allows for a more detailed exploration of each computational step, helping to build a deeper understanding of how gradient descent, cost functions, and other core ML concepts work.
 
-## Files
+## 1. **Multiple Linear Regression (multiple_linear_regression.py)**
 
-### 1. Multiple_Linear_Regression.py
+This script implements a multiple linear regression model from scratch to predict salaries based on features such as years of experience, education level, and city.
 
-This script demonstrates the implementation of multiple linear regression using gradient descent. It includes functions to compute cost, compute gradients, and perform gradient descent optimization on a dataset that includes categorical and numerical features. 
+### Key Features:
 
-#### Description
+- **Data Preprocessing**: Uses `OneHotEncoder` for categorical feature encoding and `StandardScaler` to standardize numerical features.
+- **Gradient Descent**: Manually computes the gradients for weights and bias using mean squared error (MSE) as the cost function.
+- **Model Training**: Performs gradient descent over multiple iterations to minimize the cost and improve the model.
+- **Prediction**: Predicts salary for candidates based on their features, such as experience and education level.
 
-This script performs multiple linear regression using gradient descent. It reads a dataset containing years of experience, education level, city, and corresponding salaries. The script encodes categorical features, splits the data into training and testing sets, and then optimizes the linear regression model parameters (weights and bias) to minimize the prediction error. Finally, apply it to real scenarios to predict the salary of new employees.
+### Key Libraries:
 
-#### Key Functions:
+- `numpy`, `pandas`, `scikit-learn` (for preprocessing)
+- **Note**: This script does not use `nn.Module` to manually explain all calculations in detail.
 
-1. **compute_cost**: Calculates the mean squared error between the predicted and actual values.
-2. **compute_gradient**: Computes the gradient of the cost function with respect to the weights (`w`) and bias (`b`).
-3. **gradient_descent**: Iteratively updates the weights and bias to minimize the cost function using the computed gradients.
+---
 
-### 2. Simple_linear_regression.py
+## 2. **Logistic Regression Classification (classification_logistic_regression.py)**
 
-This script demonstrates how to perform simple linear regression and visualize the results. It includes a function to draw a predicted line on a graph based on the input parameters.
+This script implements logistic regression from scratch for classifying diabetes cases based on features like age, weight, blood sugar, and gender.
 
-- **plot_pred**: This function takes two parameters, `w` for the slope and `b` for the intercept. It uses these parameters to calculate the predicted values and plots the predicted line on a scatter plot of the actual data points. This helps in visualizing the relationship between years of experience and salary.
+### Key Features:
 
-### 3. Gradient_descent.py
+- **Logistic Function (Sigmoid)**: Implements the logistic function to map predictions to probabilities.
+- **Gradient Descent**: Manually calculates gradients to optimize weights and bias using binary cross-entropy as the cost function.
+- **Prediction**: Classifies patients as diabetic or non-diabetic, and calculates model accuracy.
 
-This script demonstrates the implementation of gradient descent for linear regression. It includes functions to compute cost, compute gradients, and perform gradient descent optimization.
+### Key Libraries:
 
-#### Description
+- `numpy`, `pandas`, `scikit-learn`
+- **Note**: All gradient and cost computations are manually implemented to avoid using higher-level abstractions like `nn.Module`.
 
-This script performs simple linear regression using gradient descent. It reads a dataset of years of experience and corresponding salaries, then optimizes the linear regression model parameters (weights and bias) to minimize the prediction error.
+---
 
-#### Key Functions:
+## 3. **Gradient Descent Visualization (gradient_descent.py)**
 
-1. **compute_cost**: Calculates the mean squared error between the predicted and actual values.
-2. **compute_gradient**: Computes the gradient of the cost function with respect to the weights (`w`) and bias (`b`).
-3. **gradient_descent**: Iteratively updates the weights and bias to minimize the cost function using the computed gradients.
+This script provides a visual exploration of gradient descent for linear regression, showing how weights (`w`) and bias (`b`) are updated over time.
+
+### Key Features:
+
+- **Cost Function Visualization**: Shows the cost surface and the movement of weights and bias across iterations.
+- **3D Plot**: Visualizes the cost in relation to the weights and bias, highlighting the minimum cost point.
+- **Convergence Plot**: Plots the cost reduction over iterations for a clearer understanding of how gradient descent works.
+
+### Key Libraries:
+
+- `matplotlib`, `numpy`, `pandas`
+
+---
+
+### How to Run the Scripts:
+
+1. Clone this repository and navigate to the script you wish to run.
+2. Ensure all required libraries are installed:
+   ```bash
+   pip install numpy pandas scikit-learn matplotlib
+3. Run the Python script:
+   ```bash
+   python multiple_linear_regression.py
+   python classification_logistic_regression.py
+   python gradient_descent.py
 
 
-# Machine Learning Practice Files
+# 從零實現機器學習算法
 
-這個儲存庫包含機器學習的練習檔案，專注於不同的算法和技術。以下是可用檔案及其功能的描述。
+本倉庫包含三個 Python 腳本，這些腳本從零實現了機器學習算法，不依賴於 `nn.Module`。這種方法允許更詳細地探索每個計算步驟，有助於深入理解梯度下降、損失函數和其他核心機器學習概念的工作原理。
 
-## Files
+## 1. **多元線性回歸 (multiple_linear_regression.py)**
 
-### 1. Multiple_linear_regression.py
+該腳本從零實現了一個多元線性回歸模型，用於根據工作年限、學歷和城市等特徵來預測薪資。
 
-這個腳本展示了如何使用梯度下降法實現多元線性回歸。它包含計算成本、計算梯度以及在包含類別和數值特徵的數據集上執行梯度下降優化的函數。最後套用到真實情景，預測新員工薪資。
+### 主要功能：
 
-#### Description
+- **數據預處理**: 使用 `OneHotEncoder` 對分類特徵進行編碼，並使用 `StandardScaler` 對數值特徵進行標準化。
+- **梯度下降**: 手動計算權重和偏差的梯度，使用均方誤差 (MSE) 作為損失函數。
+- **模型訓練**: 通過多次迭代的梯度下降來最小化成本並提高模型性能。
+- **預測**: 根據工作經驗和學歷等特徵預測候選人的薪資。
 
-這個腳本使用梯度下降法執行多元線性回歸。它讀取一個包含工作年限、教育水平、城市和相應薪水的數據集。腳本對類別特徵進行編碼，將數據分成訓練集和測試集，然後優化線性回歸模型參數（權重和偏差），以最小化預測誤差。
+### 主要庫：
 
-#### Key Functions:
+- `numpy`, `pandas`, `scikit-learn`（用於數據預處理）
+- **注意**: 該腳本不使用 `nn.Module`，以便更詳細地解析所有計算步驟。
 
-1. **compute_cost**: 計算預測值和實際值之間的均方誤差。
-2. **compute_gradient**: 計算成本函數對權重（`w`）和偏差（`b`）的梯度。
-3. **gradient_descent**: 迭代更新權重和偏差，使用計算出的梯度來最小化成本函數。
+---
 
-### 2. Simple_linear_regression.py
+## 2. **邏輯回歸分類 (classification_logistic_regression.py)**
 
-這個腳本展示了如何執行簡單線性回歸並視覺化結果。它包含了一個函數，用於在圖上繪製基於輸入參數的預測線。
+該腳本從零實現了一個邏輯回歸模型，用於根據年齡、體重、血糖和性別等特徵分類糖尿病患者。
 
-- **plot_pred**: 這個函數接受兩個參數，`w` 代表斜率，`b` 代表截距。它使用這些參數來計算預測值，並在實際數據點的散點圖上繪製預測線。這有助於視覺化工作年限和薪水之間的關係。
+### 主要功能：
 
-### 3. Gradient_descent.py
+- **邏輯函數 (Sigmoid)**: 實現邏輯函數，將預測映射為概率。
+- **梯度下降**: 手動計算梯度，通過二元交叉熵作為損失函數來優化權重和偏差。
+- **預測**: 將患者分類為有糖尿病或無糖尿病，並計算模型的準確率。
 
-這個腳本展示了如何實現線性回歸的梯度下降法。它包含計算成本、計算梯度以及執行梯度下降優化的函數。
+### 主要庫：
 
-#### Description
+- `numpy`, `pandas`, `scikit-learn`
+- **注意**: 所有梯度和損失計算均手動實現，以避免使用像 `nn.Module` 這樣的高級抽象。
 
-這個腳本使用梯度下降法執行簡單線性回歸。它讀取一個包含工作年限和相應薪水的數據集，然後優化線性回歸模型參數（權重和偏差），以最小化預測誤差。
+---
 
-#### Key Functions:
+## 3. **梯度下降可視化 (gradient_descent.py)**
 
-1. **compute_cost**: 計算預測值和實際值之間的均方誤差。
-2. **compute_gradient**: 計算成本函數對權重（`w`）和偏差（`b`）的梯度。
-3. **gradient_descent**: 迭代更新權重和偏差，使用計算出的梯度來最小化成本函數。
+該腳本提供了一個梯度下降的可視化探索，用於線性回歸，展示權重 (`w`) 和偏差 (`b`) 如何隨時間更新。
 
+### 主要功能：
+
+- **損失函數可視化**: 顯示損失曲面以及權重和偏差在迭代過程中的變動。
+- **3D 圖**: 將權重和偏差與損失的關係可視化，突出顯示最低成本點。
+- **收斂圖**: 繪製成本隨迭代減少的曲線，以便更清楚地了解梯度下降的工作原理。
+
+### 主要庫：
+
+- `matplotlib`, `numpy`, `pandas`
+
+---
+
+### 如何運行腳本：
+
+1. 克隆此倉庫並進入要運行的腳本目錄。
+2. 確保安裝了所有所需的庫：
+   ```bash
+   pip install numpy pandas scikit-learn matplotlib
+
+3. 運行 Python 腳本：
+   ```bash
+   python multiple_linear_regression.py
+   python classification_logistic_regression.py
+   python gradient_descent.py
+
+---
+
+### 數據集來源：
+
+- **薪資數據集 (Salary Data)**:
+  - 此數據集用於 `multiple_linear_regression.py` 腳本中的線性回歸模型，用於預測不同特徵下的薪資水平。
+  - [Salary Dataset](https://raw.githubusercontent.com/GrandmaCan/ML/main/Resgression/Salary_Data2.csv)
+
+- **糖尿病數據集 (Diabetes Data)**:
+  - 此數據集用於 `classification_logistic_regression.py` 腳本中的邏輯回歸模型，用於分類糖尿病患者。
+  - [Diabetes Dataset](https://raw.githubusercontent.com/GrandmaCan/ML/main/Classification/Diabetes_Data.csv)
+
+---
+
+### 注意事項：
+
+- **不使用 nn.Module**: 為了詳細解析機器學習算法的每一步，我們在這些腳本中未使用 `nn.Module`。所有的梯度計算、損失函數和模型優化都是手動實現的，這樣可以幫助理解核心機器學習概念。
+- **可視化支持**: `gradient_descent.py` 提供了可視化的支持，能夠更直觀地查看梯度下降過程以及權重、偏差如何隨著每次迭代而更新。
+
+---
+
+### 未來改進：
+
+- **模型擴展**: 可以將這些基本實現擴展到更複雜的模型，如多層感知器 (MLP) 和卷積神經網絡 (CNN)，以進一步探索深度學習。
+- **數據增強**: 未來可以增加更多的數據預處理步驟和增強技術，以提高模型的泛化能力。
+
+---
+
+### 貢獻方式：
+
+歡迎提交 PR 來改進此項目，或者提供任何意見反饋。您可以通過創建 Issues 或直接 Fork 本倉庫進行貢獻。
